@@ -34,18 +34,60 @@
         <div class="container">
             <ul class="nav nav-justified py-2 nav-pills">
                 <!-- GET: $_GET["variable"] are Variables that pass like paramas via URL(Also known like chain of consult throught of the URL), if is the first variable this is splitted with "?" and the next are splitted with "&" -->
-                <li class="nav-item">
-                    <a href="index.php?page=register" class="nav-link">Registro</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=ingress" class="nav-link">Ingreso</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=table" class="nav-link active">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=exit" class="nav-link">Salir</a>
-                </li>
+                
+                <?php if(isset($_GET["page"])): ?>
+                    <?php if($_GET["page"] == "register"): ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=register" class="nav-link active">Registro</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=register" class="nav-link">Registro</a>
+                        </li>
+                    <?php endif ?>
+                    <?php if($_GET["page"] == "ingress"): ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=ingress" class="nav-link active">Ingreso</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=ingress" class="nav-link">Ingreso</a>
+                        </li>
+                    <?php endif ?>
+                    <?php if($_GET["page"] == "table"): ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=table" class="nav-link active">Inicio</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=table" class="nav-link">Inicio</a>
+                        </li>
+                    <?php endif ?>
+
+                    <?php if($_GET["page"] == "exit"): ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=exit" class="nav-link ">Salir</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a href="index.php?page=exit" class="nav-link">Salir</a>
+                        </li>
+                    <?php endif ?>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a href="index.php?page=register" class="nav-link active">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?page=ingress" class="nav-link">Ingreso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?page=table" class="nav-link ">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.php?page=exit" class="nav-link">Salir</a>
+                    </li>
+                <?php endif ?>        
+                
             </ul>
         </div>
     </div>
